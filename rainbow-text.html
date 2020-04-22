@@ -1,0 +1,17 @@
+<noscript>JavaScript is required to display this animation.</noscript>
+<h1><span id="text">JavaScript not yet loaded.</span></h1>
+<script>
+try {
+  var message = (atob(document.location.search.substring(1)) || "No message specified.");
+} catch(e) {
+  var message = "An error occured decoding the message.";
+}
+var elem = document.getElementById("text");
+elem.innerHTML = message.split("").join("</span><span>");
+setInterval(function(){
+ var spans = document.getElementsByTagName("span");
+ for(var i = 0; i < spans.length; i++) {
+  spans.item(i).style.color = "#" + Math.floor(Math.random() * Math.pow(16, 6)).toString(16);
+ }
+},100);
+</script>
