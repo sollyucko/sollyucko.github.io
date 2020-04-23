@@ -2,7 +2,7 @@
 <h1><span id="text">JavaScript not yet loaded.</span></h1>
 <script>
 try {
-  var message = (atob(document.location.search.substring(1)) || "No message specified.");
+  var message = (atob(document.location.search.substring(1).split("&", 2)[0]) || "No message specified.");
 } catch(e) {
   var message = "An error occured decoding the message.";
 }
